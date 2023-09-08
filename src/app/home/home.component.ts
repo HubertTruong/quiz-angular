@@ -24,6 +24,17 @@ export class HomeComponent {
   score: number | null = null;
   errorMessage: string | null = null;
   showResults: boolean = false;
+  audio = new Audio();
+
+  ngOnInit(): void {
+    this.playAudio();
+  }
+
+  playAudio(): void {
+    this.audio.src = "assets/BlueBird.mp3";
+    this.audio.load();
+    this.audio.play();
+  }
 
   captureAnswer(questionIndex: number, answerIndex: number) {
       this.userAnswers[questionIndex] = answerIndex;
