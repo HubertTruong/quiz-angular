@@ -1,0 +1,6 @@
+<h2>{{ question.text }}</h2>
+<app-reponse 
+    *ngFor="let reponse of question.reponses" 
+    [reponse]="reponse"
+    (reponseSelected)="onReponseSelected($event)">
+</app-reponse>

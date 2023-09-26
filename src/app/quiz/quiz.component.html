@@ -1,0 +1,17 @@
+<div *ngIf="currentQuestionIndex < questions.length">
+    <h2>{{ questions[currentQuestionIndex].text }}</h2>
+    
+    <button *ngFor="let reponse of questions[currentQuestionIndex].reponses" 
+        (click)="onReponseClick(reponse.isCorrect)">
+        {{ reponse.text }}
+    </button>
+</div>
+
+<audio autoplay>
+    <source src="assets/itachi.mp3" type="audio/mpeg">
+    Votre navigateur ne prend pas en charge l'élément audio.
+</audio>
+  
+<div *ngIf="currentQuestionIndex >= questions.length">
+    Quiz terminé. Voir les résultats ou toute autre action que vous souhaitez inclure ici.
+</div>  

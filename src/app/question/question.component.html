@@ -1,9 +1,0 @@
-<h2>{{ questionText }}</h2>
-<app-reponse 
-    *ngFor="let reponse of reponses" 
-    [reponseText]="reponse"
-    [isSelected]="reponse === selectedReponse"
-    [isCorrect]="isConfirmed && reponse === correctReponse"
-    [isWrong]="isConfirmed && reponse === selectedReponse && selectedReponse !== correctReponse"
-    (selectionChanged)="updateSelection(reponse)">
-</app-reponse>
